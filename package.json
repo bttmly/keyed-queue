@@ -1,0 +1,14 @@
+{
+  "name": "keyed-queue",
+  "version": "1.0.0",
+  "description": "queue with lookup by key",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec ./test.js"
+  },
+  "author": "Nick Bottomley (github.com/nickb1080)",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}

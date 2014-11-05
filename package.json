@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "queue with lookup by key",
   "main": "index.js",
+  "repository": "git@github.com:nickb1080/keyed-queue.git",
   "scripts": {
     "test": "mocha -R spec ./test.js"
   },

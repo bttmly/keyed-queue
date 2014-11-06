@@ -5,11 +5,13 @@
   "main": "index.js",
   "repository": "git@github.com:nickb1080/keyed-queue.git",
   "scripts": {
-    "test": "mocha -R spec ./test.js"
+    "build": "coffee -c -o ./lib ./src",
+    "test": "mocha --compilers coffee:coffee-script/register ./test -R spec"
   },
   "author": "Nick Bottomley (github.com/nickb1080)",
   "license": "MIT",
   "devDependencies": {
+    "coffee-script": "^1.8.0",
     "mocha": "^2.0.1"
   }
 }

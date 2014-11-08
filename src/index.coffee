@@ -1,3 +1,7 @@
+get = (key) ->
+  (obj) ->
+    obj[key]
+
 KeyedQueue = ->
 
   store = Object.create null
@@ -19,7 +23,7 @@ KeyedQueue = ->
       return store[key]
 
     has: (key) ->
-      return store[key]?
+      return Object::hasOwnProperty.call store, key
 
     peek: ->
       return undefined unless queue.length
@@ -27,6 +31,9 @@ KeyedQueue = ->
 
     size: ->
       return queue.length
+
+    keys: ->
+      return queue.map get "key"
 
   instance
 

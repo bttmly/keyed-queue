@@ -95,3 +95,19 @@ describe "#size", ->
     assert.equal queue.size(), 1
     queue.dequeue()
     assert.equal queue.size(), 0
+
+describe "#keys", ->
+  it "returns an array of keys in the queue", ->
+    assert.deepEqual queue.keys(), []
+    queue.enqueue "a", 1
+    assert.deepEqual queue.keys(), ["a"]
+    queue.enqueue "b", 2
+    assert.deepEqual queue.keys(), ["a", "b"]
+    queue.enqueue "c", 3
+    assert.deepEqual queue.keys(), ["a", "b", "c"]
+    queue.dequeue()
+    assert.deepEqual queue.keys(), ["b", "c"]
+    queue.dequeue()
+    assert.deepEqual queue.keys(), ["c"]
+    queue.dequeue()
+    assert.deepEqual queue.keys(), []

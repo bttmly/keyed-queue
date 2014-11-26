@@ -1,3 +1,5 @@
+hasOwn = Function::call.bind Object::hasOwnProperty
+
 get = (key) ->
   (obj) ->
     obj[key]
@@ -23,10 +25,10 @@ KeyedQueue = ->
       return store[key]
 
     has: (key) ->
-      return Object::hasOwnProperty.call store, key
+      return hasOwn store, key
 
     peek: ->
-      return undefined unless queue.length
+      return null unless queue.length
       return store[queue[0].key]
 
     size: ->

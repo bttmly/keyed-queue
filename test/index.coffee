@@ -111,3 +111,12 @@ describe "#keys", ->
     assert.deepEqual queue.keys(), ["c"]
     queue.dequeue()
     assert.deepEqual queue.keys(), []
+
+describe "#clear", ->
+  it "clears all items from queue", ->
+    queue.enqueue "a", 1
+    queue.enqueue "b", 2
+    queue.enqueue "c", 3
+    assert.deepEqual queue.keys(), ["a", "b", "c"]
+    queue.clear()
+    assert.deepEqual queue.keys(), []

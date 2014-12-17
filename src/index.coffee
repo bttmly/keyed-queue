@@ -37,6 +37,10 @@ KeyedQueue = ->
     keys: ->
       return queue.map get "key"
 
+    clear: ->
+      store = Object.create null
+      queue = []
+
   instance
 
 module.exports = KeyedQueue
